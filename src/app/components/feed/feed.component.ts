@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
-import { Post } from '../../models/post.interface';
-import posts from '../../mocks/posts.mock';
-import { DataService } from '../services/data.service';
-import { User } from '../../models/user.interface';
 import { catchError, of, tap } from 'rxjs';
+
+// INTERFACES
+import { Post } from '../../models/post.interface';
+import { User } from '../../models/user.interface';
+
+// SERVICES
+import { DataService } from '../services/data.service';
 import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
@@ -14,7 +17,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
 export class FeedComponent {
   constructor(private dataService: DataService, private spinner: NgxSpinnerService) {}
 
-  postList: Post[] = posts;
+  postList: Post[] = [];
   filteredPostList: Post[] = [];
 
   // Cambio Layout

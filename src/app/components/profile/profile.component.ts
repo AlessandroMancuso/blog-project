@@ -1,7 +1,11 @@
 import { Component, Input } from '@angular/core';
-import { DataService } from '../services/data.service';
-import { User } from '../../models/user.interface';
 import { catchError, of, tap } from 'rxjs';
+
+// INTERFACES
+import { User } from '../../models/user.interface';
+
+// SERVICES
+import { DataService } from '../services/data.service';
 import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({

@@ -1,13 +1,42 @@
+<div class="profile-container">
+  <div class="user-img-container">
+    <img src="https://placehold.co/300x300" alt="User Image" />
+  </div>
 
-<div class="page-container">
-    
-    <div class="user-profile">
-        <span><b>Name: </b>{{ user?.name }}</span>
-        <span><b>Username: </b>{{ user?.username }}</span>
-        <span><b>Email: </b>{{ user?.email }}</span>
-        <span><b>Phone: </b>{{ user?.phone }}</span>
-        <span><b>Website: </b>{{ user?.website }}</span>
-        <span><b>Company: </b>{{ user?.company?.name }}</span>
-    </div>
-    
+  <div class="user-profile">
+    <section>
+      <h2>Informazioni personali</h2>
+      <span><b>Nome: </b>{{ user?.name }}</span>
+      <span><b>Username: </b>{{ user?.username }}</span>
+      <span><b>Email: </b>{{ user?.email }}</span>
+      <span><b>Sito web: </b>{{ user?.website }}</span>
+    </section>
+    <hr />
+    <section>
+      <h2>Dettagli contatto</h2>
+      <span><b>Telefono: </b>{{ user?.phone }}</span>
+      <span
+        ><b>Address: </b
+        >{{
+          user?.address?.street +
+            " - " +
+            user?.address?.suite +
+            ", " +
+            user?.address?.city
+        }}</span
+      >
+    </section>
+    <hr />
+    <section>
+      <h2>Azienda</h2>
+      <span><b>Ragione sociale: </b>{{ user?.company?.name }}</span>
+      <span><b>Motto: </b>{{ user?.company?.catchPhrase }}</span>
+
+      <div class="tags">
+        <div class="tag" *ngFor="let tag of user?.company?.bs?.split(' ')">
+          {{ tag }}
+        </div>
+      </div>
+    </section>
+  </div>
 </div>

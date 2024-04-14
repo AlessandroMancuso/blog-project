@@ -1,8 +1,11 @@
 <header>
-    <h1 (click)="goToHome()">{{ title }}</h1>
-  
+  <h1 (click)="goToHome()">{{ title }}</h1>
+
+  <div class="account">
+    <span class="account_username">{{ MOCK_USERNAME }}</span>
     <button
       class="profile fa-solid fa-circle-user fa-2x"
       (click)="goToProfile()"
     ></button>
-  </header>
+  </div>
+</header>

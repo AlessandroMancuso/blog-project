@@ -14,6 +14,17 @@ header h1 {
     cursor: pointer;
 }
 
+.account {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.account_username {
+    font-size: 12px;
+}
+
 .profile {
     border: none;
     cursor: pointer;
@@ -21,4 +32,13 @@ header h1 {
 
 .profile:hover {
     opacity: 0.75;
+}
+
+// RESPONSIVE
+
+@media only screen and (max-width: 1200px) {
+
+    .account {
+        flex-direction: column-reverse;
+    }
 }

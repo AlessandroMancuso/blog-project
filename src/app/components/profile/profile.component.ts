@@ -14,7 +14,10 @@ import { NgxSpinnerService } from 'ngx-spinner';
   styleUrls: ['./profile.component.scss'],
 })
 export class ProfileComponent {
-  constructor(private dataService: DataService, private spinner: NgxSpinnerService) {}
+  constructor(
+    private dataService: DataService,
+    private spinner: NgxSpinnerService
+  ) {}
 
   userId!: number;
   user: User | null = null;

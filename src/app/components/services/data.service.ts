@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class DataService {
   constructor(private http: HttpClient) {}
@@ -16,7 +16,7 @@ export class DataService {
     return this.http.get(this.POST_API_URL);
   }
 
-  getPost(postId : number): Observable<any> {
+  getPost(postId: number): Observable<any> {
     return this.http.get(`${this.POST_API_URL}/${postId}`);
   }
 
@@ -24,8 +24,7 @@ export class DataService {
     return this.http.get(this.USER_API_URL);
   }
 
-  getUser(userId : number): Observable<any> {
+  getUser(userId: number): Observable<any> {
     return this.http.get(`${this.USER_API_URL}/${userId}`);
   }
-  
 }

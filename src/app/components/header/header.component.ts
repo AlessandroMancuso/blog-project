@@ -13,6 +13,7 @@ export class HeaderComponent {
 
   // Mock ID dell'utente loggato
   MOCK_USER_ID = '10';
+  MOCK_USERNAME = "Moriah.Stanton";
 
   goToHome() : void {
     this.router.navigate(['']);

@@ -25,7 +25,11 @@ export class PostComponent {
   @Input() isPairMode: boolean = false;
   @Input() isDarkMode: boolean = false;
 
-  constructor(private dataService: DataService, private router: Router, private spinner: NgxSpinnerService) {}
+  constructor(
+    private dataService: DataService,
+    private router: Router,
+    private spinner: NgxSpinnerService
+  ) {}
 
   ngOnInit() {
     this.spinner.show();

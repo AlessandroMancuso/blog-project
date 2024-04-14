@@ -1,0 +1,164 @@
+
+.post-container {
+    display: flex;
+    padding: 2em;
+    color: #0f0f0f;
+}
+
+.pair-mode {
+    width: 40vw;
+}
+
+.dark-mode {
+    color: #EEEEEE;
+}
+
+.post-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-placeholder {
+    height: 50px;
+    width: 50px;
+    background-color: #EEEEEE;
+
+    padding: 0.5em;
+    display: flex;
+    align-items: end;
+    cursor: pointer;
+}
+
+.dark-mode .img-placeholder {
+    background-color: #4b4b4b;
+}
+
+.img-placeholder:hover {
+    opacity: 0.75;
+}
+
+.user-initials {
+    font-size: 12px;
+}
+
+.post-info {
+    display: flex;
+    flex-direction: column;
+    padding: 2em;
+    gap: 1em;
+}
+
+.post-title {
+    font-weight: 2rem;
+}
+
+.post-body {
+    font-weight: 1em;
+}
+
+.post-author {
+    margin-top: 1.5em;
+    font-size: 0.75em;
+    cursor: pointer;
+}
+
+.post-author:hover {
+    opacity: 0.75;
+}
+
+// MODALE
+
+.post-detail {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.post-detail-modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    width: 80%;
+    min-height: 20em;
+    background-color: #EEEEEE;
+    padding: 2em;
+    border-radius: 0.5em;
+}
+
+.dark-mode.post-detail-modal {
+    background-color: #4b4b4b;
+    color: #EEEEEE;
+}
+
+.modal-post-info {
+    display: flex;
+    flex-direction: column;
+    padding: 2em;
+    gap: 0.5em;
+}
+
+.modal-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-title i {
+    cursor: pointer;
+}
+
+.modal-title i:hover {
+    opacity: 0.75;
+}
+
+// SMARTPHONE
+
+@media only screen and (max-width: 1200px) {
+
+    .post-container {
+        flex-direction: column;
+        padding: 0em;
+    }
+
+    // .post-info {
+    //     padding: 2em 3em;
+    // }
+
+    .post-title {
+        font-size: 18px;
+    }
+
+    .post-body {
+        font-size: 14px;
+    }
+
+    .img-placeholder {
+        width: 75vw;
+        height: 75vw;
+    }
+
+    .pair-mode.post-container {
+        padding: 0em;
+    }
+
+    .pair-mode .post-info {
+        padding: 2em 0em;
+    }
+
+    .pair-mode .img-placeholder {
+        width: 40vw;
+        height: 40vw;
+    }
+
+    .post-detail-modal {
+        min-height: 15em;
+    }
+}

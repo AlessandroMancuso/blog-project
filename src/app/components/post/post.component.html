@@ -1,0 +1,40 @@
+<div
+  class="post-container"
+  [ngClass]="{ 'pair-mode': isPairMode, 'dark-mode': isDarkMode }"
+>
+  <div class="post-image">
+    <!-- <img src="https://placehold.co/50x50" [attr.alt]="post.title" /> -->
+    <div class="img-placeholder" (click)="openDialog()">
+      <p class="user-initials">{{ userInitials ? userInitials : "" }}</p>
+    </div>
+  </div>
+
+  <div class="post-info">
+    <h3 class="post-title">{{ post.title }}</h3>
+    <p class="post-body">{{ post.body }}</p>
+
+    <p class="post-author" (click)="goToProfile()">{{ user?.name }}</p>
+  </div>
+</div>
+
+<div class="post-detail" *ngIf="showDialog">
+  <div
+    class="post-detail-modal"
+    [ngClass]="{ 'pair-mode': isPairMode, 'dark-mode': isDarkMode }"
+  >
+    <div class="modal-title">
+      <h2>Dettaglio del post</h2>
+
+      <i class="fa-solid fa-xmark fa-2x" (click)="closeDialog()"></i>
+    </div>
+
+    <div class="modal-post-info" >
+      <h2 class="post-title">{{ post.title }}</h2>
+      <p class="post-body">{{ post.body }}</p>
+    </div>
+
+    <p class="post-author" (click)="goToProfile()">
+      {{ user?.name + " - @" + user?.username }}
+    </p>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+<ng-container>
+
+  <div class="filter-section">
+
+    <div class="select-input">
+      <label for="userFilter">Filtra per autore</label>
+      <select [ngModel]="selectedOption" (ngModelChange)="filterPostList($event)" >
+        <option *ngFor="let option of options" [value]="option.value" id="userFilter">{{ option.label }}</option>
+      </select>
+    </div>
+
+    <div class="options">
+      <div class="input">
+        <input type="checkbox" [(ngModel)]="isPairMode" id="pairModeCheckbox" />
+        <label for="pairModeCheckbox">Layout</label>
+      </div>
+  
+      <div class="input">
+        <input type="checkbox" [(ngModel)]="isDarkMode" id="darkModeCheckbox" />
+        <label for="pairModeCheckbox">Dark Mode</label>
+      </div>
+    </div>
+
+  </div>
+
+  <div
+    class="feed"
+    [ngClass]="{ 'pair-mode': isPairMode, 'dark-mode': isDarkMode }"
+  >
+    <div *ngFor="let post of filteredPostList; let last = last">
+      <app-post
+        [post]="post"
+        [isPairMode]="isPairMode"
+        [isDarkMode]="isDarkMode"
+      ></app-post>
+
+      <hr *ngIf="!last && !isPairMode" />
+    </div>
+  </div>
+</ng-container>

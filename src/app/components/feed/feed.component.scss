@@ -1,0 +1,61 @@
+.feed {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding: 2em;
+}
+
+.dark-mode {
+    background-color: #0f0f0f;
+}
+
+.pair-mode {
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.filter-section {
+    background-color: #dddfdf;
+    height: 3em;
+    padding: 2em;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.input {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.select-input {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5;
+}
+
+label {
+    font-size: 14px;
+}
+
+select {
+    padding: 1em;
+    border-radius: 0.5em;
+}
+
+// SMARTPHONE
+
+@media only screen and (max-width: 800px) {
+    .filter-section {
+        height: 1em;
+    }
+}
